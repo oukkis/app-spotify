@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 container text-center" id="upper">
+      <div>
+        <h1>Spotify Search Engine</h1>
+        <div>
+          <span>Sort by: </span>
+          <button class="btn" ng-click = "toggleAlbumArtist()">{{type}}</button>
+        </div>
+        <form ng-submit="search()">
+          <div class="form-group col-xs-4 col-xs-offset-4">
+            <input id="user_input" class="search form-control" ng-model="query" placeholder="Type in here!">
+            <input type="submit" id="search_btn" class="btn"value="Go!"></input>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+
+      <ul class="results">
+        <li ng-repeat="result in results.items" class="thumbnail col-xs-4 col-xs-offset-0">
+
+          <a ng-if="type == 'Album'" href="#/list_tracks/{{result.id}}" ng-model="query"><p>{{result.name}}</p><img ng-src="{{result.images[0].url}}"></a>
+          <a ng-if="type == 'Artist'" href="#/list_artists/{{result.id}}" ng-model="query"><p>{{result.name}}</p><img ng-src="{{result.images[0].url}}"></a>
+
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

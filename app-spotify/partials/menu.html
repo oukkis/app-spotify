@@ -1,0 +1,15 @@
+<div class="col-md-12 container text-center" id="upper">
+  <div>
+    <h1>Spotify Search Engine</h1>
+    <div>
+      <span>Sort by: </span>
+      <button class="btn" ng-click = "toggleAlbumArtist()">{{type}}</button>
+    </div>
+    <form ng-submit="search()">
+      <div class="form-group col-xs-4 col-xs-offset-4">
+        <input id="user_input" class="search form-control" ng-model="query" placeholder="Type in here!">
+        <input type="submit" id="search_btn" class="btn"value="Go!"></input>
+      </div>
+    </form>
+  </div>
+</div>
